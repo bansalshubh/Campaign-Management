@@ -13,7 +13,7 @@ const Campaign = () => {
             // console.log(data)
             let parsedData = await data.json();
             console.log(parsedData);
-            // setCamp(parsedData);
+            setCamp(parsedData);
         }
         fetchData();
     }, [])
