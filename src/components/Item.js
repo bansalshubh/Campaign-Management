@@ -17,7 +17,7 @@ const Item = (props) => {
           body: JSON.stringify({ title, desc,platform,camp })
         });
         const json = await response.json();
-        console.log(json)
+        // console.log(json)
     }
 
     const navigate = useNavigate();
@@ -28,10 +28,10 @@ const Item = (props) => {
             platform:plat,
             camp:""
           }
-          console.log(obj)
+        //   console.log(obj)
           localStorage.setItem('token',JSON.stringify(obj));
           var x = localStorage.getItem('token')
-          console.log(x)
+        //   console.log(x)
         //   addCamp(title,desc,plat,"");
         navigate('/products');
     }

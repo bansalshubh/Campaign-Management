@@ -12,7 +12,7 @@ router.get('/allcampaigns',async(req,res)=>{
 })
 
 router.post('/addNewCampaign',async (req,res)=>{
-    console.log(req.body);
+    // console.log(req.body);
     let { title, description, platform } = req.body;
     // const camp = Campaigns(req.body);
     try {
@@ -23,7 +23,7 @@ router.post('/addNewCampaign',async (req,res)=>{
         })
         res.status(200).json({camp});
     } catch (error) {
-        console.log(error.message);
+        // console.log(error.message);
         res.status(500).json({message: "Internal Server Error" });
     }
 });
@@ -41,7 +41,7 @@ router.post('/fetchproduct',async(req,res)=>{
 })
 
 router.post('/addNewProduct',async (req,res)=>{
-    console.log(req.body);
+    // console.log(req.body);
     let { title, price } = req.body;
     try {
         const prod = await products.create({
@@ -50,7 +50,7 @@ router.post('/addNewProduct',async (req,res)=>{
         })
         res.status(200).json({prod});
     } catch (error) {
-        console.log(error.message);
+        // console.log(error.message);
         res.status(500).json({message: "Internal Server Error" });
     }
 });

@@ -18,7 +18,7 @@ const handleOnClick = async(title)=>{
     var x = localStorage.getItem('token');
     localStorage.removeItem('token');
     let obj = JSON.parse(x)
-    console.log(obj)
+    // console.log(obj)
     title = obj.title;
     let desc = obj.desc;
     let platform = obj.platform;

@@ -10,10 +10,10 @@ const Campaign = () => {
         async function fetchData() {
             let url = `http://localhost:5000/api/campaigns/allcampaigns`;
             let data = await fetch(url);
-            console.log(data)
+            // console.log(data)
             let parsedData = await data.json();
             console.log(parsedData);
-            setCamp(parsedData);
+            // setCamp(parsedData);
         }
         fetchData();
     }, [])

@@ -9,9 +9,9 @@ const Products = () => {
         async function fetchData() {
             let url = `http://localhost:5000/api/campaigns/allproducts`;
             let data = await fetch(url);
-            console.log(data)
+            // console.log(data)
             let parsedData = await data.json();
-            console.log(parsedData);
+            // console.log(parsedData);
             setCamp(parsedData);
         }
         fetchData();
