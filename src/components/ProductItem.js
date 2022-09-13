@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const ProductItem = (props) => {
 
@@ -13,6 +14,7 @@ async function fetchData(title) {
       const json = await response.json();
       return json;
 }
+const navigate = useNavigate();
 const handleOnClick = async(title)=>{
     const json = await fetchData(title);
     var x = localStorage.getItem('token');
@@ -32,7 +34,8 @@ const handleOnClick = async(title)=>{
         body: JSON.stringify({title,desc,platform,camp})
       });
       const j = await response.json();
-      return j;
+      console.log(j)
+      navigate('/');
 }
 
   return (

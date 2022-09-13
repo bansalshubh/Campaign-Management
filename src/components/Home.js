@@ -10,7 +10,7 @@ const Home = () => {
     const [newCamp, setnewCamp] = useState({})
     useEffect(() => {
         async function fetchData() {
-            let url = `http://localhost:5000/api/campaigns/allusercampaigns`;
+            let url = `http://localhost:5000/api/usercampaigns/allusercampaigns`;
             let data = await fetch(url);
             // console.log(data)
             let parsedData = await data.json();
@@ -35,7 +35,7 @@ const Home = () => {
                     </div>
                     <button className='btn btn-primary' onClick={handleOnClick} style={{ "margin": "auto" }}>Create a new Campaign</button>
                 </div>
-                <div className="row">
+                <div className="row mt-4">
                     {Camp.map((element) => {
                         return <div className="col-md-3 my-3" key={element.title}>
                             {<Item title={element.title} description={element.desc} platform={element.platform}></Item>}
