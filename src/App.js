@@ -1,24 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from "react-router-dom";
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Campaign from './components/Campaign';
+import Products from './components/Products';
+import SelectCampaign from './components/SelectCampaign';
+import Campaignstate from './context/campaignstate';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Campaignstate>
+        <Router>
+          <Navbar />
+          <div className="container">
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/campaign" element={<Campaign />} />
+              <Route exact path="/products" element={<Products />} />
+              <Route exact path="/selectcamp" element={<SelectCampaign />} />
+            </Routes>
+          </div>
+        </Router>
+      </Campaignstate>
+    </>
   );
 }
 
