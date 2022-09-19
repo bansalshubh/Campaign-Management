@@ -22,7 +22,7 @@ const AllProducts = () => {
                     <div className="row">
                         {Camp.map((element) => {
                             return <div className="col-md-3 my-3" key={element.title}>
-                                {<AllProductItem title={element.title} price={element.price}></AllProductItem>}
+                                {<AllProductItem title={element.title} price={element.price} id={element._id}></AllProductItem>}
                                 {/* <h1>{element.title}</h1> */}
                             </div>
                         })}
