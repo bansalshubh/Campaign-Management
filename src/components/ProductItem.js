@@ -1,5 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import {browserHistory} from 'react-router'
+
 
 const ProductItem = (props) => {
 
@@ -36,6 +38,7 @@ const handleOnClick = async(title)=>{
       const j = await response.json();
       console.log(j)
       navigate('/');
+      navigate.browserHistory.replace('/')
 }
 
   return (
@@ -45,7 +48,8 @@ const handleOnClick = async(title)=>{
                 <div className="card-body">
                     <h5 className="card-title">{props.title}</h5>
                     <p className="card-text">{props.price}</p>
-                    <button onClick={() => handleOnClick(props.title)} className="btn btn-primary">Select Product</button>
+                    {props.page}
+                    <button onClick={() => handleOnClick(props.title)} className="btn btn-primary" style={{ "visibility": `${props.page !== "item" ? "visible" : "hidden"}` }}>Select Product</button>
                 </div>
             </div>
         </div>

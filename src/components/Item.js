@@ -33,7 +33,9 @@ const Item = (props) => {
           var x = localStorage.getItem('token')
         //   console.log(x)
         //   addCamp(title,desc,plat,"");
-        navigate('/products');
+        navigate('/products',{state:{
+          way:"item"
+        }});
     }
 
     return (
@@ -43,6 +45,8 @@ const Item = (props) => {
                     <h5 className="card-title">{props.title}</h5>
                     <p className="card-text">{props.description}</p>
                     <p className="card-text">{props.platform}</p>
+                    {props.page}
+                    <p className="card-text" style={{ "display": `${props.pages == "home" ? "initial" : "none"}`,"background":"#49c249","borderRadius":"16px","padding":"8px","color":"white" }}>Activated</p>
                     <button onClick={() => handleOnClick(props.title, props.description, props.platform)} className="btn btn-primary" style={{ "display": `${props.page != "select" ? "none" : "block"}` }}>Choose Campaign</button>
                 </div>
             </div>

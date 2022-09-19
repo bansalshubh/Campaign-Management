@@ -7,6 +7,11 @@ router.get('/allusercampaigns',async(req,res)=>{
     res.json(cam)
 });
 
+router.post('/fetchcampaigns',async(req,res)=>{
+    const prod = await Camp.find({"platform":req.body.platform})
+    res.json(prod);
+})
+
 router.post('/createcampaign',async (req,res)=>{
     console.log(req.body);
     let { title, desc,platform,camp } = req.body;

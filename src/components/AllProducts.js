@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Item from './Item';
-import ProductItem from './ProductItem';
+import AllProductItem from './AllProductItem';
 
-const Products = () => {
+const AllProducts = () => {
     const [Camp, setCamp] = useState([]);
     useEffect(() => {
         async function fetchData() {
@@ -14,8 +13,7 @@ const Products = () => {
             setCamp(parsedData);
         }
         fetchData();
-    }, [])
-
+    }, []);
     return (
         <div>
             <div>
@@ -24,7 +22,7 @@ const Products = () => {
                     <div className="row">
                         {Camp.map((element) => {
                             return <div className="col-md-3 my-3" key={element.title}>
-                                {<ProductItem title={element.title} price={element.price}></ProductItem>}
+                                {<AllProductItem title={element.title} price={element.price}></AllProductItem>}
                                 {/* <h1>{element.title}</h1> */}
                             </div>
                         })}
@@ -35,4 +33,4 @@ const Products = () => {
     )
 }
 
-export default Products
+export default AllProducts

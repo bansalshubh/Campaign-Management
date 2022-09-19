@@ -10,6 +10,8 @@ import Campaign from './components/Campaign';
 import Products from './components/Products';
 import SelectCampaign from './components/SelectCampaign';
 import Campaignstate from './context/campaignstate';
+import Sidebar from './components/Sidebar';
+import AllProducts from './components/AllProducts';
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
               <Route exact path="/" element={<Home />} />
               <Route exact path="/campaign" element={<Campaign />} />
               <Route exact path="/products" element={<Products />} />
+              <Route exact path="/allprod" element={<AllProducts />} />
               <Route exact path="/selectcamp" element={<SelectCampaign />} />
             </Routes>
           </div>
